@@ -5,7 +5,7 @@ import { CgFileDocument } from 'react-icons/cg';
 
 const NavBar = () => {
     return (
-        <div className="w-11/12 grid grid-cols-2 lg:grid-cols-10">
+        <div className="w-11/12 grid grid-cols-2 lg:grid-cols-10 lg:w-full">
             <div className="
                 flex
                 justify-start
@@ -47,9 +47,9 @@ const NavBar = () => {
                 lg:col-span-3
                 lg:h-24"
             >
-                <AiFillLinkedin className="w-8 h-8" />
-                <AiFillGithub className="w-8 h-8 ml-5" />
-                <CgFileDocument className="w-8 h-8 ml-5" />
+                <Link href=''><AiFillLinkedin className="w-8 h-8" /></Link>
+                <Link href=''><AiFillGithub className="w-8 h-8 ml-5" /></Link>
+                <Link href=''><CgFileDocument className="w-8 h-8 ml-5" /></Link>
             </div>
         </div>
 
