@@ -12,13 +12,17 @@ type CardInfo = {
 const Projects = () => {
     return (
         <div className="
+            w-11/12
             flex
             flex-col
-            items-start
+            items-center
+            md:items-start
             lg:w-full">
-            <h1 className="font-bold mb-14 lg:text-5xl">Projects</h1>
+            <div className='w-full flex justify-start'>
+                <h1 className="font-bold mb-4 md:mb-14 lg:text-5xl">Projects</h1>
+            </div>
             {/* Grid */}
-            <div className="w-11/12 grid lg:grid-cols-2 lg:w-full lg:gap-4">
+            <div className=" grid gap-5 lg:grid-cols-2 lg:w-full lg:gap-10">
                 <ProjectCard />
                 <ProjectCard />
                 <ProjectCard />
@@ -46,9 +50,33 @@ const ProjectCard = () => {
                 justify-center
                 rounded-lg">
                 <div className='w-11/12 flex flex-col justify-center items-center'>
-                    <Image alt='image' src='/barbeat.png' width={600} height={500} />
-                    <div className='py-4 w-full flex justify-start'>
-                        <h1>hello world</h1>
+                    <Image className='pt-6' alt='image' src='/barbeat.png' width={610} height={500} />
+                    <h1 className='py-12 w-full text-2xl font-bold'>BarBeat</h1>
+                    <p className="text-slate-400 text-sm lg:text-lg">Mobile application allowing users to discover new cocktails. Built with Flutter, Firebase and Rive.</p>
+                    <div className='w-full pt-12 pb-6 flex justify-evenly items-center'>
+                        <button className="
+                            rounded-full
+                            bg-gradient-to-r from-blue-500 to-green-500
+                            px-5
+                            py-4
+                            md:px-10
+                            md:py-5
+                            text-sm
+                        ">
+                            Live Preview
+                        </button>
+                        <button className="
+                            rounded-full
+                            px-5
+                            py-3
+                            md:px-10
+                            md:py-4
+                            border-2
+                            border-white
+                            text-sm
+                        ">
+                            Check on GitHub
+                        </button>
                     </div>
                 </div>
             </div>
