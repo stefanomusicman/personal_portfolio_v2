@@ -47,9 +47,9 @@ const NavBar = () => {
                 lg:col-span-3
                 lg:h-24"
             >
-                <Link href=''><AiFillLinkedin className="w-8 h-8" /></Link>
-                <Link href=''><AiFillGithub className="w-8 h-8 ml-5" /></Link>
-                <Link href=''><CgFileDocument className="w-8 h-8 ml-5" /></Link>
+                <Link href="https://www.linkedin.com/in/stefano-proietti-286497235/" target='_blank'><AiFillLinkedin className="w-8 h-8" /></Link>
+                <Link href="https://github.com/stefanomusicman" target='_blank'><AiFillGithub className="w-8 h-8 ml-5" /></Link>
+                <Link href="https://drive.google.com/file/d/1zO2854p5sFkV3u6V914UhjUypcPQjiDk/view?usp=sharing" target='_blank'><CgFileDocument className="w-8 h-8 ml-5" /></Link>
             </div>
         </div>
 
