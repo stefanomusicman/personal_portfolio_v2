@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import SectionLayout from './SectionLayout';
 type CardInfo = {
     title: String,
     img: String,
@@ -51,13 +52,7 @@ const projectInfo: CardInfo[] = [
 
 const Projects = () => {
     return (
-        <div className="
-            w-11/12
-            flex
-            flex-col
-            items-center
-            md:items-start
-            lg:w-full">
+        <SectionLayout>
             <div className='w-full flex justify-start'>
                 <h1 className="font-bold mb-4 md:mb-14 lg:text-5xl">Projects</h1>
             </div>
@@ -73,7 +68,7 @@ const Projects = () => {
                         demoLink={item.demoLink}
                         codeLink={item.codeLink} />)}
             </div>
-        </div>
+        </SectionLayout>
     );
 }
 
@@ -83,7 +78,7 @@ export default Projects;
 
 const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink, showCodeLink, demoLink, codeLink }) => {
     return (
-        <div className="p-px bg-gradient-to-r from-blue-500 to-green-500 rounded-lg">
+        <div className="p-px bg-gradient-to-r from-blue-500 to-green-500 rounded-3xl">
             <div className="
                 h-full 
                 w-full 
@@ -93,7 +88,7 @@ const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink
                 flex-col
                 items-center
                 justify-center
-                rounded-lg">
+                rounded-3xl">
                 <div className='w-11/12 flex flex-col justify-center items-start'>
                     <Image className='pt-6' alt='image' src={`${img}`} width={610} height={500} />
                     <h1 className='py-12 w-full text-2xl font-bold'>{title}</h1>
