@@ -52,10 +52,7 @@ const projectInfo: CardInfo[] = [
 
 const Projects = () => {
     return (
-        <SectionLayout>
-            <div className='w-full flex justify-start'>
-                <h1 className="font-bold mb-4 md:mb-14 lg:text-5xl">Projects</h1>
-            </div>
+        <SectionLayout title='Projects'>
             {/* Grid */}
             <div className=" grid gap-5 lg:grid-cols-2 lg:w-full lg:gap-10">
                 {projectInfo.map((item) =>

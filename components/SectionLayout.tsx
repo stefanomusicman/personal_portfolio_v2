@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
 
 type WrapperProps = {
+    title: string;
     children: ReactNode;
 }
 
-const SectionLayout: React.FC<WrapperProps> = ({ children }) => {
+const SectionLayout: React.FC<WrapperProps> = ({ children, title }) => {
     return (
         <div className="
             w-11/12
@@ -15,6 +16,9 @@ const SectionLayout: React.FC<WrapperProps> = ({ children }) => {
             mb-20
             lg:mb-36
             lg:w-full">
+            <div className='w-full flex justify-start'>
+                <h1 className="font-bold mb-4 md:mb-14 lg:text-5xl">{title}</h1>
+            </div>
             {children}
         </div>
     )
