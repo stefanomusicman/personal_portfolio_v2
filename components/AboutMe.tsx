@@ -47,7 +47,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto font-semibold text-lg text-white">2019</h1>
                         </div>
-                        <div className="order-1 bg-gray-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div className="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
                             <h3 className="mb-3 font-bold text-gray-800 text-xl">{cardInfo[0].title}</h3>
                             <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">{cardInfo[0].description}</p>
                         </div>
@@ -59,7 +59,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto text-white font-semibold text-lg">2020</h1>
                         </div>
-                        <div className="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div className="order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
                             <h3 className="mb-3 font-bold text-white text-xl">{cardInfo[1].title}</h3>
                             <p className="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">{cardInfo[1].description}</p>
                         </div>
@@ -71,7 +71,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto font-semibold text-lg text-white">2021</h1>
                         </div>
-                        <div className="order-1 bg-gray-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div className="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
                             <h3 className="mb-3 font-bold text-gray-800 text-xl">{cardInfo[2].title}</h3>
                             <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">{cardInfo[2].description}</p>
                         </div>
@@ -83,7 +83,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto text-white font-semibold text-lg">2022</h1>
                         </div>
-                        <div className="order-1 bg-red-400 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div className="order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
                             <h3 className="mb-3 font-bold text-white text-xl">{cardInfo[3].title}</h3>
                             <p className="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">{cardInfo[3].description}</p>
                         </div>
@@ -103,7 +103,7 @@ const MobileAboutMe = () => {
             <div className="relative">
                 <div className="border-r-4 border-black absolute h-full top-0" style={{ 'left': '9px' }}></div>
                 <ul className="list-none m-0 p-0">
-                    {cardInfo.map((item) => <MobileCard year={item.year} title={item.title} description={item.description} />)}
+                    {cardInfo.map((item) => <MobileCard key={Math.random() * 100} year={item.year} title={item.title} description={item.description} />)}
                 </ul>
             </div>
         </div>

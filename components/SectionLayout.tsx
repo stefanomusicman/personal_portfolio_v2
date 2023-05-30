@@ -13,11 +13,11 @@ const SectionLayout: React.FC<WrapperProps> = ({ children, title }) => {
             flex-col
             items-center
             md:items-start
-            mb-20
+            mb-12
             lg:mb-36
             lg:w-full">
             <div className='w-full flex justify-start'>
-                <h1 className="font-bold mb-4 md:mb-14 lg:text-5xl">{title}</h1>
+                <h1 className="font-bold text-2xl mb-4 md:mb-14 lg:text-5xl">{title}</h1>
             </div>
             {children}
         </div>

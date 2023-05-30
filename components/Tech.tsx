@@ -14,6 +14,7 @@ import { SiNextdotjs } from 'react-icons/si';
 import { SiTailwindcss } from 'react-icons/si';
 import { SiStrapi } from 'react-icons/si';
 import { SiFlutter } from 'react-icons/si';
+import { SiFirebase } from 'react-icons/si';
 // ----------- Tools Icons ------------------
 import { BsGit } from 'react-icons/bs';
 import { TbBrandVscode } from 'react-icons/tb';
@@ -42,6 +43,7 @@ const Tech = () => {
     frameworksMap.set("Next", <SiNextdotjs className={`${iconSize}`} />);
     frameworksMap.set("Tailwind CSS", <SiTailwindcss className={`${iconSize} hover:text-sky-700`} />);
     frameworksMap.set("Strapi.io", <SiStrapi className={`${iconSize} hover:text-sky-700`} />);
+    frameworksMap.set("Firebase", <SiFirebase className={`${iconSize} hover:text-amber-600`} />);
     frameworksMap.set("Flutter", <SiFlutter className={`${iconSize} hover:text-sky-700`} />);
 
     // Map for Tools section
@@ -102,7 +104,7 @@ const IconsSection: React.FC<IconsSection> = ({ map, title }) => {
             </div>
             <div className="flex flex-col w-full mb-10 lg:mb-16 justify-center items-center">
                 <div className="flex py-4 lg:py-12 w-full justify-between items-center">
-                    {Array.from(map.entries()).map(([icon, text]) => <IconWithText icon={text} text={icon} />)}
+                    {Array.from(map.entries()).map(([icon, text]) => <IconWithText key={Math.random() * 100} icon={text} text={icon} />)}
                 </div>
             </div>
         </>

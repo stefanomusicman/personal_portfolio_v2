@@ -4,6 +4,8 @@ import { AiFillGithub } from 'react-icons/ai';
 import { CgFileDocument } from 'react-icons/cg';
 
 const NavBar = () => {
+    const linkHoverStyles: string = "hover:bg-gradient-to-r from-blue-500 to-green-500 hover:inline-block hover:text-transparent hover:bg-clip-text"
+
     return (
         <div className="w-11/12 grid grid-cols-2 lg:grid-cols-10 lg:w-full">
             <div className="
@@ -32,9 +34,9 @@ const NavBar = () => {
                 lg:col-span-4
                 lg:h-24"
             >
-                <Link href="">Projects</Link>
-                <Link href="">Technologies</Link>
-                <Link href="">About me</Link>
+                <Link className={linkHoverStyles} href="">Projects</Link>
+                <Link className={linkHoverStyles} href="">Technologies</Link>
+                <Link className={linkHoverStyles} href="">About me</Link>
             </div>
             <div className="
                 flex
@@ -52,8 +54,6 @@ const NavBar = () => {
                 <Link href="https://drive.google.com/file/d/1zO2854p5sFkV3u6V914UhjUypcPQjiDk/view?usp=sharing" target='_blank'><CgFileDocument className="w-8 h-8 ml-5" /></Link>
             </div>
         </div>
-
-
     )
 }
 

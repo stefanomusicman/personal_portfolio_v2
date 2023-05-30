@@ -1,54 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import SectionLayout from './SectionLayout';
-type CardInfo = {
-    title: String,
-    img: String,
-    description: String,
-    showDemoLink: Boolean,
-    showCodeLink: Boolean,
-    demoLink: String,
-    codeLink: String,
-}
-
-const projectInfo: CardInfo[] = [
-    {
-        title: 'BarBeat',
-        img: '/barbeat.png',
-        description: 'Mobile application allowing users to discover new cocktails. Built with Flutter, Firebase and Rive.',
-        showDemoLink: true,
-        showCodeLink: false,
-        demoLink: 'https://barbeat.net/',
-        codeLink: '',
-    },
-    {
-        title: 'Half Caf Blog',
-        img: '/half_caf_blog.png',
-        description: 'Blog site intended to be a one stop shop for MTL cafés. Built with Next.js + Typescript, strapi.io and Firebase.',
-        showDemoLink: true,
-        showCodeLink: true,
-        demoLink: 'https://www.halfcafblog.com/',
-        codeLink: 'https://github.com/stefanomusicman/half-caf-blog',
-    },
-    {
-        title: 'Personal Portfolio',
-        img: '/personal_portfolio.png',
-        description: 'Portfolio site intended to demonstrate my technical abilities. Built with Next.js + Typescript and Tailwind CSS.',
-        showDemoLink: false,
-        showCodeLink: true,
-        demoLink: '',
-        codeLink: 'https://github.com/stefanomusicman/personal_portfolio_v2',
-    },
-    {
-        title: 'Food Order App',
-        img: '/food_order_app.png',
-        description: 'Built with React, CSS modules and React Router.',
-        showDemoLink: true,
-        showCodeLink: true,
-        demoLink: 'https://food-order-app-d8cc7.web.app/',
-        codeLink: 'https://github.com/stefanomusicman/food-order-app',
-    }
-]
 
 const Projects = () => {
     return (
@@ -100,7 +52,7 @@ const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink
                                 md:px-10
                                 md:py-5
                                 text-sm
-                            ">
+                                ">
                                 Live Preview
                             </button>
                         </Link>}
@@ -114,7 +66,7 @@ const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink
                                 border-2
                                 border-white
                                 text-sm
-                            ">
+                                ">
                                 Check on GitHub
                             </button>
                         </Link>}
@@ -124,3 +76,52 @@ const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink
         </div>
     );
 }
+
+type CardInfo = {
+    title: String,
+    img: String,
+    description: String,
+    showDemoLink: Boolean,
+    showCodeLink: Boolean,
+    demoLink: String,
+    codeLink: String,
+}
+
+const projectInfo: CardInfo[] = [
+    {
+        title: 'BarBeat',
+        img: '/barbeat.png',
+        description: 'Mobile application allowing users to discover new cocktails. Built with Flutter, Firebase and Rive.',
+        showDemoLink: true,
+        showCodeLink: false,
+        demoLink: 'https://barbeat.net/',
+        codeLink: '',
+    },
+    {
+        title: 'Half Caf Blog',
+        img: '/half_caf_blog.png',
+        description: 'Blog site intended to be a one stop shop for MTL cafés. Built with Next.js + Typescript, strapi.io and Firebase.',
+        showDemoLink: true,
+        showCodeLink: true,
+        demoLink: 'https://www.halfcafblog.com/',
+        codeLink: 'https://github.com/stefanomusicman/half-caf-blog',
+    },
+    {
+        title: 'Personal Portfolio',
+        img: '/personal_portfolio_2.png',
+        description: 'Portfolio site intended to demonstrate my technical abilities. Built with Next.js + Typescript and Tailwind CSS.',
+        showDemoLink: false,
+        showCodeLink: true,
+        demoLink: '',
+        codeLink: 'https://github.com/stefanomusicman/personal_portfolio_v2',
+    },
+    {
+        title: 'Food Order App',
+        img: '/food_order_app.png',
+        description: 'Built with React, CSS modules and React Router.',
+        showDemoLink: true,
+        showCodeLink: true,
+        demoLink: 'https://food-order-app-d8cc7.web.app/',
+        codeLink: 'https://github.com/stefanomusicman/food-order-app',
+    }
+]
