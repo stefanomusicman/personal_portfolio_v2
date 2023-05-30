@@ -24,7 +24,7 @@ const AboutMe = () => {
     }, []);
 
     return (
-        <SectionLayout title="About Me">
+        <SectionLayout id="About Me" title="About Me">
             {screenWidth < 768 && <MobileAboutMe />}
             {screenWidth >= 768 && <DesktopAboutMe />}
         </SectionLayout>

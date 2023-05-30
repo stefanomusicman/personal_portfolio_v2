@@ -55,7 +55,7 @@ const Tech = () => {
     toolsMap.set("Jira", <SiJira className={`${iconSize} hover:text-sky-700 `} />);
 
     return (
-        <SectionLayout title="Technology">
+        <SectionLayout id="Technology" title="Technology">
             <IconsSection map={languagesMap} title="Languages/Other" />
             <IconsSection map={frameworksMap} title="Frameworks/Libraries" />
             <IconsSection map={toolsMap} title="Tools" />

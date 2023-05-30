@@ -4,7 +4,7 @@ import SectionLayout from './SectionLayout';
 
 const Projects = () => {
     return (
-        <SectionLayout title='Projects'>
+        <SectionLayout id='Projects' title='Projects'>
             {/* Grid */}
             <div className=" grid gap-5 lg:grid-cols-2 lg:w-full lg:gap-10">
                 {projectInfo.map((item) =>

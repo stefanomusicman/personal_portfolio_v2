@@ -13,14 +13,13 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       animation: {
-        wiggle: 'wiggle 5s infinite',
-        wiggleSlow: 'wiggle 3s infinite',
-        bounce: 'bounce 5s infinite'
+        wiggle: 'wiggle 5s infinite linear',
+        wiggleSlow: 'wiggle 3s infinite linear',
       },
       keyframes: {
         wiggle: {
           '0%, 100%': {
-            transform: 'scale(1.2)',
+            transform: 'scale(1)',
           },
           '50%': {
             transform: 'scale(0.8)',

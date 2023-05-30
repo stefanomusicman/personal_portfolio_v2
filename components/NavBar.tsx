@@ -34,9 +34,9 @@ const NavBar = () => {
                 lg:col-span-4
                 lg:h-24"
             >
-                <Link className={linkHoverStyles} href="">Projects</Link>
-                <Link className={linkHoverStyles} href="">Technologies</Link>
-                <Link className={linkHoverStyles} href="">About me</Link>
+                <Link className={linkHoverStyles} href="#Projects">Projects</Link>
+                <Link className={linkHoverStyles} href="#Technology">Technologies</Link>
+                <Link className={linkHoverStyles} href="#About Me">About me</Link>
             </div>
             <div className="
                 flex

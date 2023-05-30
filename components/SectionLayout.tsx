@@ -3,11 +3,12 @@ import { ReactNode } from "react";
 type WrapperProps = {
     title: string;
     children: ReactNode;
+    id: string;
 }
 
-const SectionLayout: React.FC<WrapperProps> = ({ children, title }) => {
+const SectionLayout: React.FC<WrapperProps> = ({ children, title, id }) => {
     return (
-        <div className="
+        <div id={id} className="
             w-11/12
             flex
             flex-col
