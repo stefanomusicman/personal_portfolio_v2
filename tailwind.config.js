@@ -15,6 +15,8 @@ module.exports = {
       animation: {
         wiggle: 'wiggle 3s infinite linear',
         wiggleSlow: 'wiggle 2s infinite linear',
+        swipeLeft: 'swipeLeft 0.5s linear',
+        swipeRight: 'swipeRight 0.5s linear',
       },
       keyframes: {
         wiggle: {
@@ -23,7 +25,29 @@ module.exports = {
           },
           '50%': {
             transform: 'scale(0.8)',
-          }
+          },
+        },
+        swipeLeft: {
+          '0%': {
+            transform: 'translateX(-100%)',
+            opacity: '0',
+            visibility: 'hidden',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)',
+            visibility: 'visible',
+          },
+        },
+        swipeRight: {
+          '0%': {
+            transform: 'translateX(100%)',
+            opacity: '0',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+            opacity: '1',
+          },
         },
       }
     },

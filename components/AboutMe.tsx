@@ -1,8 +1,32 @@
 'use client';
 import { useEffect, useState } from "react";
 import SectionLayout from "./SectionLayout";
+import { useInView } from "react-intersection-observer";
 
 const AboutMe = () => {
+    const { ref: leftRef, inView: leftInView } = useInView();
+    const { ref: leftRef2, inView: leftInView2 } = useInView();
+    const { ref: rightRef, inView: rightInView } = useInView();
+    const { ref: rightRef2, inView: rightInView2 } = useInView();
+
+    const refs: NodeRef[] = [
+        {
+            ref: leftRef,
+            inView: leftInView,
+        },
+        {
+            ref: leftRef2,
+            inView: leftInView2,
+        },
+        {
+            ref: rightRef,
+            inView: rightInView,
+        },
+        {
+            ref: rightRef2,
+            inView: rightInView2,
+        },
+    ]
 
     const [screenWidth, setScreenWidth] = useState(0);
 
@@ -26,7 +50,7 @@ const AboutMe = () => {
     return (
         <SectionLayout id="About-Me" title="About Me">
             {screenWidth < 768 && <MobileAboutMe />}
-            {screenWidth >= 768 && <DesktopAboutMe />}
+            {screenWidth >= 768 && <DesktopAboutMe data={refs} />}
         </SectionLayout>
     );
 }
@@ -34,7 +58,21 @@ const AboutMe = () => {
 export default AboutMe;
 
 // --------------------------------------------------------------------------------------------------
-const DesktopAboutMe = () => {
+type NodeRef = {
+    ref: (node?: Element | null | undefined) => void;
+    inView: Boolean;
+}
+
+type DesktopProps = {
+    data: NodeRef[];
+}
+const DesktopAboutMe: React.FC<DesktopProps> = ({ data }) => {
+
+    const leftCard1Class: string = `${data[0].inView && 'animate-swipeLeft'} auto order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4`
+    const leftCard2Class: string = `${data[1].inView && 'animate-swipeLeft'} auto order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4`
+    const rightCard1Class: string = `${data[2].inView && 'animate-swipeRight'} auto order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4`
+    const rightCard2Class: string = `${data[3].inView && 'animate-swipeRight'} auto order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4`
+
     return (
         <>
             {/*  <!-- component --*/}
@@ -47,7 +85,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto font-semibold text-lg text-white">2019</h1>
                         </div>
-                        <div className="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div ref={data[2].ref} className={rightCard1Class}>
                             <h3 className="mb-3 font-bold text-gray-800 text-xl">{cardInfo[0].title}</h3>
                             <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">{cardInfo[0].description}</p>
                         </div>
@@ -59,7 +97,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto text-white font-semibold text-lg">2020</h1>
                         </div>
-                        <div className="order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div ref={data[0].ref} className={leftCard1Class}>
                             <h3 className="mb-3 font-bold text-white text-xl">{cardInfo[1].title}</h3>
                             <p className="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">{cardInfo[1].description}</p>
                         </div>
@@ -71,7 +109,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto font-semibold text-lg text-white">2021</h1>
                         </div>
-                        <div className="order-1 bg-green-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div ref={data[3].ref} className={rightCard2Class}>
                             <h3 className="mb-3 font-bold text-gray-800 text-xl">{cardInfo[2].title}</h3>
                             <p className="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">{cardInfo[2].description}</p>
                         </div>
@@ -83,7 +121,7 @@ const DesktopAboutMe = () => {
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto text-white font-semibold text-lg">2022</h1>
                         </div>
-                        <div className="order-1 bg-blue-500 rounded-lg shadow-xl w-5/12 px-6 py-4">
+                        <div ref={data[1].ref} className={leftCard2Class}>
                             <h3 className="mb-3 font-bold text-white text-xl">{cardInfo[3].title}</h3>
                             <p className="text-sm font-medium leading-snug tracking-wide text-white text-opacity-100">{cardInfo[3].description}</p>
                         </div>
@@ -141,21 +179,21 @@ const cardInfo: CardDetails[] = [
     {
         year: '2019',
         title: "The Travelling Musician",
-        description: "This was a very interesting year to the say the least. My band AMAVI received an amazing opportunity to write a 90 minute score for the contemporary dance performance GAIA created by world renowned choreographer John Huy Tran. Following the completion of the score, we were flown out to Ho Chi Minh City, Vietnam to perform the show for live audiences.",
+        description: "This was a very interesting year to the say the least. Emabarked on a musical journey that took me to Ho Chi Minh City, Vietnam.",
     },
     {
         year: '2020',
         title: "Learning to Adapt",
-        description: "Following a successful musical journey to Vietnam, 2020 was set to be a year filled with travelling and adventures however the covid-19 pandemic threw a unexpected rock in the road and halted all plans. Having much time on my hands, I decided to try something new and came across HTML and CSS.",
+        description: "Following a successful musical journey to Vietnam, 2020 was set to be a year filled with adventures however the covid-19 pandemic threw a unexpected rock in the road and halted all plans. This is where I found HTML and CSS.",
     },
     {
         year: '2021',
         title: "Diving into JavaScript",
-        description: "Upon discovery of HTML and CSS, I began creating basic webpages which grew my interest towards programming although I knew I was not ACTUALLY programming. In order to program I needed to learn a programming language which led me to Javascript.",
+        description: "After having created some basic webpages, my interest for programming grew. I knew I needed to learn a programming language which led me to Javascript.",
     },
     {
         year: '2022',
         title: "Frameworks, Projects and College",
-        description: "After getting more comfortable with Javascript and having grasped various programming concepts I began learning React.js to modernize my knowledge of web development. This led to my interest in programming becoming so large that I decided to enroll at a local college to further my knowledge.",
+        description: "Once comfortable with Javascript I began learning React.js to modernize my knowledge of web development. In an effort to obtain some formal training, I decided to enroll at a local college as well as collaborate on projects.",
     },
 ]
