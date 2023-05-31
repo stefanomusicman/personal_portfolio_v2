@@ -1,10 +1,13 @@
+'use client';
 import Link from "next/link";
+import React from "react";
 import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillGithub } from 'react-icons/ai';
 import { CgFileDocument } from 'react-icons/cg';
+import ScrollLink from "./ScrollLink";
 
 const NavBar = () => {
-    const linkHoverStyles: string = "hover:bg-gradient-to-r from-blue-500 to-green-500 hover:inline-block hover:text-transparent hover:bg-clip-text"
+    const linkHoverStyles: string = "hover:bg-gradient-to-r from-blue-500 to-green-500 hover:inline-block hover:text-transparent hover:bg-clip-text";
 
     return (
         <div className="w-11/12 grid grid-cols-2 lg:grid-cols-10 lg:w-full">
@@ -34,9 +37,9 @@ const NavBar = () => {
                 lg:col-span-4
                 lg:h-24"
             >
-                <Link className={linkHoverStyles} href="#Projects">Projects</Link>
-                <Link className={linkHoverStyles} href="#Technology">Technologies</Link>
-                <Link className={linkHoverStyles} href="#About Me">About me</Link>
+                <ScrollLink className={linkHoverStyles} href="#Projects">Projects</ScrollLink>
+                <ScrollLink className={linkHoverStyles} href="#Technology">Technologies</ScrollLink>
+                <ScrollLink className={linkHoverStyles} href="#About-Me">About me</ScrollLink>
             </div>
             <div className="
                 flex

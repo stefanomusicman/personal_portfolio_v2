@@ -1,4 +1,5 @@
 'use client';
+import Link from "next/link";
 import React, { useState } from "react";
 
 const HeroSection = () => {
@@ -165,7 +166,7 @@ const TextSection = () => {
                     lg:flex
                     lg:flex-col
                     lg:justify-center">
-                <button className="
+                <Link href="https://drive.google.com/file/d/1zO2854p5sFkV3u6V914UhjUypcPQjiDk/view?usp=sharing" target='_blank'><button className="
                     rounded-full
                     bg-gradient-to-r from-blue-500 to-green-500
                     px-4
@@ -176,6 +177,7 @@ const TextSection = () => {
                     ">
                     Download CV
                 </button>
+                </Link>
             </div>
         </div>
     );
