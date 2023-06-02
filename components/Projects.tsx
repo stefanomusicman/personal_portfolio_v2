@@ -134,7 +134,7 @@ const projectInfo: CardInfo[] = [
         id: 3,
         title: 'Personal Portfolio',
         img: '/personal_portfolio_2.png',
-        description: 'Portfolio site intended to demonstrate my technical abilities. Built with Next.js + Typescript and Tailwind CSS.',
+        description: 'Portfolio site intended to demonstrate my technical abilities. Built with Next.js + Typescript, Tailwind CSS and GSAP.',
         showDemoLink: false,
         showCodeLink: true,
         demoLink: '',
