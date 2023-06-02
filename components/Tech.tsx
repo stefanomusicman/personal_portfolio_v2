@@ -84,7 +84,7 @@ const IconWithText: React.FC<IconWithTextProp> = ({ text, icon }) => {
     useEffect(() => {
         const card = cardRef.current;
         gsap.fromTo(card, { opacity: 0, translateY: 100 }, {
-            opacity: 1, translateY: 0, duration: 3, scrollTrigger: {
+            opacity: 1, translateY: 0, duration: 1.5, scrollTrigger: {
                 trigger: card,
             }
         })
