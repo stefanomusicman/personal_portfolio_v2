@@ -1,16 +1,27 @@
 'use client';
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillGithub } from 'react-icons/ai';
 import { CgFileDocument } from 'react-icons/cg';
 import ScrollLink from "./ScrollLink";
+import { gsap } from 'gsap';
+
 
 const NavBar = () => {
     const linkHoverStyles: string = "hover:bg-gradient-to-r from-blue-500 to-green-500 hover:inline-block hover:text-transparent hover:bg-clip-text";
 
+    const navBarRef: any = useRef();
+
+    useEffect(() => {
+        const navBar = navBarRef.current;
+        gsap.fromTo(navBar, { opacity: 0, translateY: 75 }, {
+            opacity: 1, translateY: 0, duration: 1.5
+        })
+    }, [])
+
     return (
-        <div className="w-11/12 grid grid-cols-2 lg:grid-cols-10 lg:w-full">
+        <div ref={navBarRef} className="w-11/12 grid grid-cols-2 lg:grid-cols-10 lg:w-full">
             <div className="
                 flex
                 justify-start

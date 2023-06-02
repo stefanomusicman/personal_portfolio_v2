@@ -1,6 +1,10 @@
 'use client';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SectionLayout from "./SectionLayout";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Register the Scroll Trigger
+gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
 
@@ -35,6 +39,40 @@ export default AboutMe;
 
 // --------------------------------------------------------------------------------------------------
 const DesktopAboutMe = () => {
+
+    const leftOneRef: any = useRef();
+    const rightOneRef: any = useRef();
+    const leftTwoRef: any = useRef();
+    const rightTwoRef: any = useRef();
+
+    useEffect(() => {
+        const leftOne = leftOneRef.current;
+        const rightOne = rightOneRef.current;
+        const leftTwo = leftTwoRef.current;
+        const rightTwo = rightTwoRef.current;
+
+        gsap.fromTo(rightOne, { opacity: 0, translateX: 100 }, {
+            opacity: 1, translateX: 0, duration: 3, scrollTrigger: {
+                trigger: rightOne,
+            }
+        })
+        gsap.fromTo(rightTwo, { opacity: 0, translateX: 100 }, {
+            opacity: 1, translateX: 0, duration: 3, scrollTrigger: {
+                trigger: rightTwo,
+            }
+        })
+        gsap.fromTo(leftOne, { opacity: 0, translateX: -100 }, {
+            opacity: 1, translateX: 0, duration: 3, scrollTrigger: {
+                trigger: leftOne,
+            }
+        })
+        gsap.fromTo(leftTwo, { opacity: 0, translateX: -100 }, {
+            opacity: 1, translateX: 0, duration: 3, scrollTrigger: {
+                trigger: leftTwo,
+            }
+        })
+    }, []);
+
     return (
         <>
             {/*  <!-- component --*/}
@@ -42,7 +80,7 @@ const DesktopAboutMe = () => {
                 <div className="relative wrap overflow-hidden h-full">
                     <div className="border-2-2 absolute border-opacity-20 border-gray-700 h-full border" style={{ left: "50%" }}></div>
                     {/*- right timeline --*/}
-                    <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div ref={rightOneRef} className="mb-8 flex justify-between items-center w-full right-timeline">
                         <div className="order-1 w-5/12"></div>
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto font-semibold text-lg text-white">2019</h1>
@@ -54,7 +92,7 @@ const DesktopAboutMe = () => {
                     </div>
 
                     {/*-- left timeline --*/}
-                    <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div ref={leftOneRef} className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                         <div className="order-1 w-5/12"></div>
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto text-white font-semibold text-lg">2020</h1>
@@ -66,7 +104,7 @@ const DesktopAboutMe = () => {
                     </div>
 
                     {/*- right timeline --*/}
-                    <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div ref={rightTwoRef} className="mb-8 flex justify-between items-center w-full right-timeline">
                         <div className="order-1 w-5/12"></div>
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto font-semibold text-lg text-white">2021</h1>
@@ -78,7 +116,7 @@ const DesktopAboutMe = () => {
                     </div>
 
                     {/*-- left timeline --*/}
-                    <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div ref={leftTwoRef} className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                         <div className="order-1 w-5/12"></div>
                         <div className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-16 h-16 rounded-full">
                             <h1 className="mx-auto text-white font-semibold text-lg">2022</h1>
@@ -103,7 +141,7 @@ const MobileAboutMe = () => {
             <div className="relative">
                 <div className="border-r-4 border-black absolute h-full top-0" style={{ 'left': '9px' }}></div>
                 <ul className="list-none m-0 p-0">
-                    {cardInfo.map((item) => <MobileCard key={Math.random() * 100} year={item.year} title={item.title} description={item.description} />)}
+                    {cardInfo.map((item) => <MobileCard key={item.year} year={item.year} title={item.title} description={item.description} />)}
                 </ul>
             </div>
         </div>

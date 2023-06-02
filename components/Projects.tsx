@@ -1,6 +1,12 @@
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import SectionLayout from './SectionLayout';
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Register the Scroll Trigger
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
     return (
@@ -9,6 +15,7 @@ const Projects = () => {
             <div className=" grid gap-5 lg:grid-cols-2 lg:w-full lg:gap-10">
                 {projectInfo.map((item) =>
                     <ProjectCard
+                        key={item.id}
                         id={item.id}
                         title={item.title}
                         img={item.img}
@@ -27,8 +34,19 @@ export default Projects;
 //-------------------------------------------------------------------------
 
 const ProjectCard: React.FC<CardInfo> = ({ id, title, img, description, showDemoLink, showCodeLink, demoLink, codeLink }) => {
+    const cardRef: any = useRef();
+
+    useEffect(() => {
+        const card = cardRef.current;
+        gsap.fromTo(card, { opacity: 0, translateY: 100 }, {
+            opacity: 1, translateY: 0, duration: 3, scrollTrigger: {
+                trigger: card,
+            }
+        })
+    }, []);
+
     return (
-        <div key={id} className="p-px bg-gradient-to-r from-blue-500 to-green-500 rounded-3xl">
+        <div ref={cardRef} key={id} className="p-px bg-gradient-to-r from-blue-500 to-green-500 rounded-3xl">
             <div className="
                 h-full 
                 w-full 

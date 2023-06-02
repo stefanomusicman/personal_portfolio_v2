@@ -1,5 +1,5 @@
 'use client';
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import SectionLayout from "./SectionLayout";
 // --------- Languages Icons ---------------
 import { SiJavascript } from 'react-icons/si';
@@ -22,6 +22,11 @@ import { SiFigma } from 'react-icons/si';
 import { SiLinux } from 'react-icons/si';
 import { SiPostman } from 'react-icons/si';
 import { SiJira } from 'react-icons/si';
+// ------------ GSAP ------------------------
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 const Tech = () => {
     const iconSize: string = "w-8 h-8 lg:w-12 lg:h-12";
@@ -74,6 +79,17 @@ type IconWithTextProp = {
 const IconWithText: React.FC<IconWithTextProp> = ({ text, icon }) => {
     const [isHovering, setIsHovering] = useState(false);
 
+    const cardRef: any = useRef();
+
+    useEffect(() => {
+        const card = cardRef.current;
+        gsap.fromTo(card, { opacity: 0, translateY: 100 }, {
+            opacity: 1, translateY: 0, duration: 3, scrollTrigger: {
+                trigger: card,
+            }
+        })
+    }, []);
+
     const handleMouseEnter = () => {
         setIsHovering(true);
     }
@@ -83,7 +99,7 @@ const IconWithText: React.FC<IconWithTextProp> = ({ text, icon }) => {
     }
 
     return (
-        <div className="flex justify-center items-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div ref={cardRef} className="flex justify-center items-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {icon}
             {isHovering && <p className="ml-1 transition delay-150 duration-300 ease-in-out">{text}</p>}
         </div>
@@ -104,7 +120,7 @@ const IconsSection: React.FC<IconsSection> = ({ map, title }) => {
             </div>
             <div className="flex flex-col w-full mb-10 lg:mb-16 justify-center items-center">
                 <div className="flex py-4 lg:py-12 w-full justify-between items-center">
-                    {Array.from(map.entries()).map(([icon, text]) => <IconWithText key={Math.random() * 100} icon={text} text={icon} />)}
+                    {Array.from(map.entries()).map(([icon, text]) => <IconWithText key={Math.random() * 1000} icon={text} text={icon} />)}
                 </div>
             </div>
         </>

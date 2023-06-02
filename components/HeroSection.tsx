@@ -1,6 +1,7 @@
 'use client';
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const HeroSection = () => {
 
@@ -27,6 +28,13 @@ type HoverStatus = {
 // --------------------------------------------------------------------------------------------------
 const BigCircle: React.FC<HoverStatus> = ({ isHovering }) => {
 
+    const circleRef: any = useRef();
+
+    useEffect(() => {
+        const circle = circleRef.current;
+        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 3 })
+    }, []);
+
     const styles: string = `${isHovering && 'animate-pulse'}
     ${isHovering && 'animate-wiggle'}
     -left-16 
@@ -49,7 +57,7 @@ const BigCircle: React.FC<HoverStatus> = ({ isHovering }) => {
     rounded-full`
 
     return (
-        <div className={styles}>
+        <div ref={circleRef} className={styles}>
             <div className="h-full w-full bg-[#060b1b] rounded-full"></div>
         </div>
     );
@@ -57,6 +65,14 @@ const BigCircle: React.FC<HoverStatus> = ({ isHovering }) => {
 
 // --------------------------------------------------------------------------------------------------
 const FilledCircle: React.FC<HoverStatus> = ({ isHovering }) => {
+
+    const circleRef: any = useRef();
+
+    useEffect(() => {
+        const circle = circleRef.current;
+        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 3 })
+    }, []);
+
     const styles: string = `
     ${isHovering && 'animate-wiggleSlow'}
     left-48 
@@ -81,13 +97,20 @@ const FilledCircle: React.FC<HoverStatus> = ({ isHovering }) => {
     rounded-full`
 
     return (
-        <div className={styles}>
+        <div ref={circleRef} className={styles}>
         </div>
     );
 }
 
 // --------------------------------------------------------------------------------------------------
-const CircleWithImage: React.FC<HoverStatus> = ({ isHovering, setIsHovering }) => {
+const CircleWithImage: React.FC<HoverStatus> = ({ setIsHovering }) => {
+
+    const circleRef: any = useRef();
+
+    useEffect(() => {
+        const circle = circleRef.current;
+        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 3 })
+    }, []);
 
     const handleMouseEnter = () => {
         setIsHovering(true);
@@ -105,6 +128,7 @@ const CircleWithImage: React.FC<HoverStatus> = ({ isHovering, setIsHovering }) =
     p-px 
     absolute 
     shadow-lg shadow-cyan-500/50
+    filter-none
     lg:w-[12rem]
     lg:h-[12rem]
     lg:left-auto
@@ -122,7 +146,7 @@ const CircleWithImage: React.FC<HoverStatus> = ({ isHovering, setIsHovering }) =
     rounded-full`
 
     return (
-        <div className={styles} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div ref={circleRef} className={styles} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <img alt="profile-pic" src="/ai-profile.jpg" className="h-full w-full bg-[#060b1b] rounded-full" />
         </div>
     );
@@ -133,6 +157,22 @@ const TextSection = () => {
     const nameStyles: string = "font-bold text-2xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text";
     const titleStyles: string = "text-2xl lg:text-5xl xl:text-6xl";
     const description: string = "Software Developer with an artistic background currently studying computer science looking to grow and take on fun challenges in the world of tech. Passionate about using code as a tool to build fun and amazing things.";
+
+    const nameRef: any = useRef();
+    const titleRef: any = useRef();
+    const descRef: any = useRef();
+    const buttonRef: any = useRef();
+
+    useEffect(() => {
+        const name = nameRef.current;
+        const title = titleRef.current;
+        const desc = descRef.current;
+        const button = buttonRef.current;
+        gsap.fromTo(name, { translateX: -1000 }, { translateX: 0, duration: 2 })
+        gsap.fromTo(title, { translateX: -1000 }, { translateX: 0, duration: 1.6 })
+        gsap.fromTo(desc, { translateX: -1000 }, { translateX: 0, duration: 1.2 })
+        gsap.fromTo(button, { translateX: -1000 }, { translateX: 0, duration: 1.2 })
+    }, []);
 
     return (
         <div className="
@@ -152,8 +192,8 @@ const TextSection = () => {
                     lg:flex
                     lg:flex-col
                     lg:justify-evenly">
-                <h1 className={nameStyles}>Hello, I'm Stefano,</h1>
-                <h1 className={titleStyles}>Software Developer</h1>
+                <h1 ref={nameRef} className={nameStyles}>Hello, I'm Stefano,</h1>
+                <h1 ref={titleRef} className={titleStyles}>Software Developer</h1>
             </div>
             {/* description container */}
             <div className="
@@ -162,10 +202,10 @@ const TextSection = () => {
                     lg:flex
                     lg:flex-col
                     lg:justify-center">
-                <p className="text-sm lg:text-lg">{description}</p>
+                <p ref={descRef} className="text-sm lg:text-lg">{description}</p>
             </div>
             {/* Button container */}
-            <div className="
+            <div ref={buttonRef} className="
                     lg:h-1/5
                     lg:flex
                     lg:flex-col
