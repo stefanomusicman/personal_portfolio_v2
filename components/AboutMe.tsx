@@ -141,21 +141,21 @@ const cardInfo: CardDetails[] = [
     {
         year: '2019',
         title: "The Travelling Musician",
-        description: "This was a very interesting year to the say the least. My band AMAVI received an amazing opportunity to write a 90 minute score for the contemporary dance performance GAIA created by world renowned choreographer John Huy Tran. Following the completion of the score, we were flown out to Ho Chi Minh City, Vietnam to perform the show for live audiences.",
+        description: "This was a very interesting year to the say the least. I travelled to Ho Chi Minh City, Vietnam on a professional musical endeavour.",
     },
     {
         year: '2020',
         title: "Learning to Adapt",
-        description: "Following a successful musical journey to Vietnam, 2020 was set to be a year filled with travelling and adventures however the covid-19 pandemic threw a unexpected rock in the road and halted all plans. Having much time on my hands, I decided to try something new and came across HTML and CSS.",
+        description: "Following my successful musical journey, 2020 was set to be a year filled with adventures however the covid-19 pandemic threw a unexpected rock in the road and halted all plans.",
     },
     {
         year: '2021',
         title: "Diving into JavaScript",
-        description: "Upon discovery of HTML and CSS, I began creating basic webpages which grew my interest towards programming although I knew I was not ACTUALLY programming. In order to program I needed to learn a programming language which led me to Javascript.",
+        description: "Upon discovering HTML and CSS, I began creating basic webpages which grew my interest towards programming. I knew learning a programming language was essential, this lead me to Javascript.",
     },
     {
         year: '2022',
         title: "Frameworks, Projects and College",
-        description: "After getting more comfortable with Javascript and having grasped various programming concepts I began learning React.js to modernize my knowledge of web development. This led to my interest in programming becoming so large that I decided to enroll at a local college to further my knowledge.",
+        description: "After getting comfortable with Javascript I began learning React.js to modernize my knowledge of web development. In an effort to receive more formal training, I decided to enroll at a local college to further my knowledge.",
     },
 ]

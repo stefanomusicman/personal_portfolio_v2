@@ -130,6 +130,10 @@ const CircleWithImage: React.FC<HoverStatus> = ({ isHovering, setIsHovering }) =
 
 // --------------------------------------------------------------------------------------------------
 const TextSection = () => {
+    const nameStyles: string = "font-bold text-2xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text";
+    const titleStyles: string = "text-2xl lg:text-5xl xl:text-6xl";
+    const description: string = "Software Developer with an artistic background currently studying computer science looking to grow and take on fun challenges in the world of tech. Passionate about using code as a tool to build fun and amazing things.";
+
     return (
         <div className="
                 w-11/12
@@ -148,8 +152,8 @@ const TextSection = () => {
                     lg:flex
                     lg:flex-col
                     lg:justify-evenly">
-                <h1 className="font-bold text-2xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text">Hello, I'm Stefano,</h1>
-                <h1 className="text-2xl lg:text-5xl xl:text-6xl">software developer</h1>
+                <h1 className={nameStyles}>Hello, I'm Stefano,</h1>
+                <h1 className={titleStyles}>Software Developer</h1>
             </div>
             {/* description container */}
             <div className="
@@ -158,7 +162,7 @@ const TextSection = () => {
                     lg:flex
                     lg:flex-col
                     lg:justify-center">
-                <p className="text-sm lg:text-lg">Software Developer with an artistic background currently studying computer science looking to grow and take on fun challenges in the world of tech. Passionate about using code as a tool to build fun and amazing things.</p>
+                <p className="text-sm lg:text-lg">{description}</p>
             </div>
             {/* Button container */}
             <div className="

@@ -9,6 +9,7 @@ const Projects = () => {
             <div className=" grid gap-5 lg:grid-cols-2 lg:w-full lg:gap-10">
                 {projectInfo.map((item) =>
                     <ProjectCard
+                        id={item.id}
                         title={item.title}
                         img={item.img}
                         description={item.description}
@@ -25,9 +26,9 @@ export default Projects;
 
 //-------------------------------------------------------------------------
 
-const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink, showCodeLink, demoLink, codeLink }) => {
+const ProjectCard: React.FC<CardInfo> = ({ id, title, img, description, showDemoLink, showCodeLink, demoLink, codeLink }) => {
     return (
-        <div className="p-px bg-gradient-to-r from-blue-500 to-green-500 rounded-3xl">
+        <div key={id} className="p-px bg-gradient-to-r from-blue-500 to-green-500 rounded-3xl">
             <div className="
                 h-full 
                 w-full 
@@ -41,7 +42,9 @@ const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink
                 <div className='w-11/12 flex flex-col justify-center items-start'>
                     <Image className='pt-6' alt='image' src={`${img}`} width={610} height={500} />
                     <h1 className='py-12 w-full text-2xl font-bold'>{title}</h1>
-                    <p className="text-slate-400 text-sm lg:text-lg">{description}</p>
+                    <div className='w-full flex justify-start items-center h-24'>
+                        <p className="text-slate-400 text-sm lg:text-lg">{description}</p>
+                    </div>
                     <div className='w-full pt-12 pb-6 flex justify-evenly items-center'>
                         {showDemoLink && <Link target='_blank' href={`${demoLink}`}>
                             <button className="
@@ -78,6 +81,7 @@ const ProjectCard: React.FC<CardInfo> = ({ title, img, description, showDemoLink
 }
 
 type CardInfo = {
+    id: number,
     title: String,
     img: String,
     description: String,
@@ -89,15 +93,17 @@ type CardInfo = {
 
 const projectInfo: CardInfo[] = [
     {
+        id: 1,
         title: 'BarBeat',
         img: '/barbeat.png',
-        description: 'Mobile application allowing users to discover new cocktails. Built with Flutter, Firebase and Rive.',
+        description: 'Mobile application allowing users to discover new cocktails. Built with Flutter, Firebase and Rive. *Built with a team, currently in closed testing. Private repository',
         showDemoLink: true,
         showCodeLink: false,
         demoLink: 'https://barbeat.net/',
         codeLink: '',
     },
     {
+        id: 2,
         title: 'Half Caf Blog',
         img: '/half_caf_blog.png',
         description: 'Blog site intended to be a one stop shop for MTL cafés. Built with Next.js + Typescript, strapi.io and Firebase.',
@@ -107,6 +113,7 @@ const projectInfo: CardInfo[] = [
         codeLink: 'https://github.com/stefanomusicman/half-caf-blog',
     },
     {
+        id: 3,
         title: 'Personal Portfolio',
         img: '/personal_portfolio_2.png',
         description: 'Portfolio site intended to demonstrate my technical abilities. Built with Next.js + Typescript and Tailwind CSS.',
@@ -116,9 +123,10 @@ const projectInfo: CardInfo[] = [
         codeLink: 'https://github.com/stefanomusicman/personal_portfolio_v2',
     },
     {
-        title: 'Food Order App',
-        img: '/food_order_app.png',
-        description: 'Built with React, CSS modules and React Router.',
+        id: 4,
+        title: 'Weather App',
+        img: '/weather_app.png',
+        description: 'PWA built with Next.js + Typescript which interacts with a third party API to retrieve data.',
         showDemoLink: true,
         showCodeLink: true,
         demoLink: 'https://food-order-app-d8cc7.web.app/',
