@@ -68,11 +68,13 @@ const ProjectCard: React.FC<CardInfo> = ({ id, title, img, description, showDemo
                             <button className="
                                 rounded-full
                                 bg-gradient-to-r from-blue-500 to-green-500
-                                px-5
+                                px-4
                                 py-4
+                                text-xs
+                                xs:px-5
+                                xs:text-sm
                                 md:px-10
                                 md:py-5
-                                text-sm
                                 ">
                                 Live Preview
                             </button>
@@ -82,11 +84,12 @@ const ProjectCard: React.FC<CardInfo> = ({ id, title, img, description, showDemo
                                 rounded-full
                                 px-5
                                 py-3
+                                text-xs
+                                xs:text-sm
                                 md:px-10
                                 md:py-4
                                 border-2
                                 border-white
-                                text-sm
                                 ">
                                 Check on GitHub
                             </button>

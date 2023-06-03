@@ -34,7 +34,7 @@ const NavBar = () => {
                 lg:col-span-3
                 lg:h-24"
             >
-                <p className="text-2xl">Stefano Proietti</p>
+                <p className="text-xl xs:text-2xl">Stefano Proietti</p>
             </div>
             <div className="
                 flex

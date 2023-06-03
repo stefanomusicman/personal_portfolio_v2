@@ -39,8 +39,12 @@ const BigCircle: React.FC<HoverStatus> = ({ isHovering }) => {
     ${isHovering && 'animate-wiggle'}
     -left-16 
     bottom-10 
-    w-[20rem] 
-    h-[20rem] 
+    w-[15rem] 
+    h-[15rem] 
+    xs:-left-16 
+    xs:bottom-10 
+    xs:w-[20rem] 
+    xs:h-[20rem] 
     bg-gradient-to-r from-blue-500 to-green-500 
     p-px 
     absolute 
@@ -75,10 +79,14 @@ const FilledCircle: React.FC<HoverStatus> = ({ isHovering }) => {
 
     const styles: string = `
     ${isHovering && 'animate-wiggleSlow'}
-    left-48 
-    bottom-40 
-    w-[8rem] 
-    h-[8rem] 
+    left-40
+    bottom-32 
+    w-[7rem] 
+    h-[7rem] 
+    xs:left-48 
+    xs:bottom-40 
+    xs:w-[8rem] 
+    xs:h-[8rem] 
     bg-gradient-to-r from-blue-500 to-green-500 
     p-px 
     absolute 
@@ -120,10 +128,15 @@ const CircleWithImage: React.FC<HoverStatus> = ({ setIsHovering }) => {
         setIsHovering(false);
     }
 
-    const styles: string = `left-24 
-    bottom-56 
-    w-[10rem] 
-    h-[10rem] 
+    const styles: string = `
+    left-24 
+    bottom-44
+    w-[8rem] 
+    h-[8rem] 
+    xs:left-24 
+    xs:bottom-56 
+    xs:w-[10rem] 
+    xs:h-[10rem] 
     bg-gradient-to-r from-blue-500 to-green-500 
     p-px 
     absolute 
