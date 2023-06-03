@@ -32,7 +32,7 @@ const BigCircle: React.FC<HoverStatus> = ({ isHovering }) => {
 
     useEffect(() => {
         const circle = circleRef.current;
-        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 3 })
+        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 2 })
     }, []);
 
     const styles: string = `${isHovering && 'animate-pulse'}
@@ -74,7 +74,7 @@ const FilledCircle: React.FC<HoverStatus> = ({ isHovering }) => {
 
     useEffect(() => {
         const circle = circleRef.current;
-        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 3 })
+        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 2 })
     }, []);
 
     const styles: string = `
@@ -117,7 +117,7 @@ const CircleWithImage: React.FC<HoverStatus> = ({ setIsHovering }) => {
 
     useEffect(() => {
         const circle = circleRef.current;
-        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 3 })
+        gsap.fromTo(circle, { opacity: 0 }, { opacity: 1, duration: 2 })
     }, []);
 
     const handleMouseEnter = () => {
@@ -181,10 +181,10 @@ const TextSection = () => {
         const title = titleRef.current;
         const desc = descRef.current;
         const button = buttonRef.current;
-        gsap.fromTo(name, { translateX: -1000 }, { translateX: 0, duration: 2 })
-        gsap.fromTo(title, { translateX: -1000 }, { translateX: 0, duration: 1.6 })
+        gsap.fromTo(name, { translateX: -1000 }, { translateX: 0, duration: 1.6 })
+        gsap.fromTo(title, { translateX: -1000 }, { translateX: 0, duration: 1.4 })
         gsap.fromTo(desc, { translateX: -1000 }, { translateX: 0, duration: 1.2 })
-        gsap.fromTo(button, { translateX: -1000 }, { translateX: 0, duration: 1.2 })
+        gsap.fromTo(button, { translateX: -1000 }, { translateX: 0, duration: 1.1 })
     }, []);
 
     return (

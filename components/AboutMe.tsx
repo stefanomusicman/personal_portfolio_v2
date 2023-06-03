@@ -52,22 +52,22 @@ const DesktopAboutMe = () => {
         const rightTwo = rightTwoRef.current;
 
         gsap.fromTo(rightOne, { opacity: 0, translateX: 100 }, {
-            opacity: 1, translateX: 0, duration: 1.5, scrollTrigger: {
+            opacity: 1, translateX: 0, duration: 1.2, scrollTrigger: {
                 trigger: rightOne,
             }
         })
         gsap.fromTo(rightTwo, { opacity: 0, translateX: 100 }, {
-            opacity: 1, translateX: 0, duration: 1.5, scrollTrigger: {
+            opacity: 1, translateX: 0, duration: 1.2, scrollTrigger: {
                 trigger: rightTwo,
             }
         })
         gsap.fromTo(leftOne, { opacity: 0, translateX: -100 }, {
-            opacity: 1, translateX: 0, duration: 1.5, scrollTrigger: {
+            opacity: 1, translateX: 0, duration: 1.2, scrollTrigger: {
                 trigger: leftOne,
             }
         })
         gsap.fromTo(leftTwo, { opacity: 0, translateX: -100 }, {
-            opacity: 1, translateX: 0, duration: 1.5, scrollTrigger: {
+            opacity: 1, translateX: 0, duration: 1.2, scrollTrigger: {
                 trigger: leftTwo,
             }
         })
@@ -156,7 +156,7 @@ const MobileCard: React.FC<CardDetails> = ({ year, title, description }) => {
         const card = cardRef.current;
 
         gsap.fromTo(card, { opacity: 0, translateX: 100 }, {
-            opacity: 1, translateX: 0, duration: 1.5, scrollTrigger: {
+            opacity: 1, translateX: 0, duration: 1.2, scrollTrigger: {
                 trigger: card,
             }
         })

@@ -39,7 +39,7 @@ const ProjectCard: React.FC<CardInfo> = ({ id, title, img, description, showDemo
     useEffect(() => {
         const card = cardRef.current;
         gsap.fromTo(card, { opacity: 0, translateY: 100 }, {
-            opacity: 1, translateY: 0, duration: 2, scrollTrigger: {
+            opacity: 1, translateY: 0, duration: 1.2, scrollTrigger: {
                 trigger: card,
             }
         })
