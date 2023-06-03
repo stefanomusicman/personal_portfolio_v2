@@ -149,8 +149,21 @@ const MobileAboutMe = () => {
 }
 // --------------------------------------------------------------------------------------------------
 const MobileCard: React.FC<CardDetails> = ({ year, title, description }) => {
+
+    const cardRef: any = useRef();
+
+    useEffect(() => {
+        const card = cardRef.current;
+
+        gsap.fromTo(card, { opacity: 0, translateX: 100 }, {
+            opacity: 1, translateX: 0, duration: 1.5, scrollTrigger: {
+                trigger: card,
+            }
+        })
+    }, [])
+
     return (
-        <li className="mb-5  ">
+        <li ref={cardRef} className="mb-5  ">
             <div className="flex group items-center ">
                 <div className="bg-gray-800 group-hover:bg-red-700 z-10 rounded-full border-4 border-black  h-5 w-5">
                     <div className="bg-black h-1 w-6 items-center  ml-4 mt-1"></div>
