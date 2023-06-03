@@ -19,6 +19,7 @@ const Projects = () => {
                         id={item.id}
                         title={item.title}
                         img={item.img}
+                        tech={item.tech}
                         description={item.description}
                         showDemoLink={item.showDemoLink}
                         showCodeLink={item.showCodeLink}
@@ -33,7 +34,7 @@ export default Projects;
 
 //-------------------------------------------------------------------------
 
-const ProjectCard: React.FC<CardInfo> = ({ id, title, img, description, showDemoLink, showCodeLink, demoLink, codeLink }) => {
+const ProjectCard: React.FC<CardInfo> = ({ id, title, img, tech, description, showDemoLink, showCodeLink, demoLink, codeLink }) => {
     const cardRef: any = useRef();
 
     useEffect(() => {
@@ -59,9 +60,13 @@ const ProjectCard: React.FC<CardInfo> = ({ id, title, img, description, showDemo
                 rounded-3xl">
                 <div className='w-11/12 flex flex-col justify-center items-start'>
                     <Image className='pt-6' alt='image' src={`${img}`} width={610} height={500} />
-                    <h1 className='py-12 w-full text-2xl font-bold'>{title}</h1>
+                    <h1 className='pt-6 w-full text-2xl font-bold'>{title}</h1>
                     <div className='w-full flex justify-start items-center h-24'>
                         <p className="text-slate-400 text-sm lg:text-lg">{description}</p>
+                    </div>
+                    <div className='w-full flex flex-col justify-center items-start'>
+                        <h3 className='text-xl pb-2'>Tech Used</h3>
+                        <p className="text-slate-400 text-sm lg:text-lg">{tech}</p>
                     </div>
                     <div className='w-full pt-12 pb-6 flex justify-evenly items-center'>
                         {showDemoLink && <Link target='_blank' href={`${demoLink}`}>
@@ -105,6 +110,7 @@ type CardInfo = {
     id: number,
     title: String,
     img: String,
+    tech: String,
     description: String,
     showDemoLink: Boolean,
     showCodeLink: Boolean,
@@ -117,7 +123,8 @@ const projectInfo: CardInfo[] = [
         id: 1,
         title: 'BarBeat',
         img: '/barbeat.png',
-        description: 'Mobile application allowing users to discover new cocktails. Built with Flutter, Firebase and Rive. *Built with a team, currently in closed testing. Private repository',
+        tech: 'Flutter, Firebase and Rive',
+        description: 'Mobile application allowing users to discover new cocktails. Built with a team, currently in closed testing. Private repository',
         showDemoLink: true,
         showCodeLink: false,
         demoLink: 'https://barbeat.net/',
@@ -127,7 +134,8 @@ const projectInfo: CardInfo[] = [
         id: 2,
         title: 'Half Caf Blog',
         img: '/half_caf_blog.png',
-        description: 'Blog site intended to be a one stop shop for MTL cafés. Built with Next.js + Typescript, strapi.io and Firebase.',
+        tech: 'Next.js + Typescript, strapi.io and Firebase',
+        description: 'Blog site intended to be a one stop shop for MTL cafés.',
         showDemoLink: true,
         showCodeLink: true,
         demoLink: 'https://www.halfcafblog.com/',
@@ -137,7 +145,8 @@ const projectInfo: CardInfo[] = [
         id: 3,
         title: 'Personal Portfolio',
         img: '/personal_portfolio_2.png',
-        description: 'Portfolio site intended to demonstrate my technical abilities. Built with Next.js + Typescript, Tailwind CSS and GSAP.',
+        tech: 'Next.js + Typescript, Tailwind CSS and GSAP',
+        description: 'Portfolio site intended to demonstrate my technical abilities.',
         showDemoLink: false,
         showCodeLink: true,
         demoLink: '',
@@ -147,7 +156,8 @@ const projectInfo: CardInfo[] = [
         id: 4,
         title: 'Weather App',
         img: '/weather_app.png',
-        description: 'PWA built with Next.js + Typescript which interacts with a third party API to retrieve data.',
+        tech: 'PWA built with Next.js + Typescript',
+        description: 'Application that interacts with a third party API to retrieve data.',
         showDemoLink: true,
         showCodeLink: true,
         demoLink: 'https://food-order-app-d8cc7.web.app/',
