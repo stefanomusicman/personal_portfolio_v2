@@ -169,7 +169,8 @@ const CircleWithImage: React.FC<HoverStatus> = ({ setIsHovering }) => {
 const TextSection = () => {
     const nameStyles: string = "font-bold text-2xl lg:text-5xl xl:text-6xl bg-gradient-to-r from-blue-500 to-green-500 inline-block text-transparent bg-clip-text";
     const titleStyles: string = "text-2xl lg:text-5xl xl:text-6xl";
-    const description: string = "Software Developer with an artistic background currently studying computer science looking to grow and take on fun challenges in the world of tech. Passionate about using code as a tool to build fun and amazing things.";
+    const description: string = "Software Developer with an artistic background currently studying computer science looking to grow and take on fun challenges in the world of tech.";
+    {/* Passionate about using code as a tool to build fun and amazing things. */ }
 
     const nameRef: any = useRef();
     const titleRef: any = useRef();
@@ -197,7 +198,7 @@ const TextSection = () => {
                 justify-evenly
                 h-1/2
                 lg:justify-center
-                lg:w-4/6 
+                lg:w-7/12
                 lg:h-[calc(100vh-96px)]">
             {/* title container */}
             <div className="
