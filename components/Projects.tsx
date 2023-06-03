@@ -160,7 +160,7 @@ const projectInfo: CardInfo[] = [
         description: 'Application that interacts with a third party API to retrieve data.',
         showDemoLink: true,
         showCodeLink: true,
-        demoLink: 'https://food-order-app-d8cc7.web.app/',
-        codeLink: 'https://github.com/stefanomusicman/food-order-app',
+        demoLink: 'https://weather-app-rose-two.vercel.app/',
+        codeLink: 'https://github.com/stefanomusicman/weather-app',
     }
 ]
