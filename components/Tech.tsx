@@ -36,28 +36,28 @@ const Tech = () => {
     const toolsMap: Map<string, ReactNode> = new Map();
 
     // Map for Languages section
-    languagesMap.set("JavaScript", <SiJavascript className={`${iconSize} hover:text-amber-400 hover:bg-white`} />);
-    languagesMap.set("TypeScript", <SiTypescript className={`${iconSize} hover:text-sky-700 hover:bg-white`} />);
-    languagesMap.set("HTML", <SiHtml5 className={`${iconSize} hover:text-amber-600 `} />);
-    languagesMap.set("CSS", <SiCss3 className={`${iconSize} hover:text-sky-700 `} />);
-    languagesMap.set(" ", <SiCsharp className={`${iconSize} hover:text-indigo-600 `} />);
-    languagesMap.set("", <TbSql className={`${iconSize}`} />);
+    languagesMap.set("JavaScript", <SiJavascript className={`${iconSize} mb-3 hover:text-amber-400 hover:bg-white`} />);
+    languagesMap.set("TypeScript", <SiTypescript className={`${iconSize} mb-3 hover:text-sky-700 hover:bg-white`} />);
+    languagesMap.set("HTML", <SiHtml5 className={`${iconSize} mb-3 hover:text-amber-600 `} />);
+    languagesMap.set("CSS", <SiCss3 className={`${iconSize} mb-3 hover:text-sky-700 `} />);
+    languagesMap.set("C#", <SiCsharp className={`${iconSize} mb-3 hover:text-indigo-600 `} />);
+    languagesMap.set("SQL PL/SQL", <TbSql className={`${iconSize} mb-3`} />);
 
     // Map for Frameworks section
-    frameworksMap.set("React", <SiReact className={`${iconSize} hover:text-sky-700`} />);
-    frameworksMap.set("Next", <SiNextdotjs className={`${iconSize}`} />);
-    frameworksMap.set("Tailwind CSS", <SiTailwindcss className={`${iconSize} hover:text-sky-700`} />);
-    frameworksMap.set("Strapi.io", <SiStrapi className={`${iconSize} hover:text-sky-700`} />);
-    frameworksMap.set("Firebase", <SiFirebase className={`${iconSize} hover:text-amber-600`} />);
-    frameworksMap.set("Flutter", <SiFlutter className={`${iconSize} hover:text-sky-700`} />);
+    frameworksMap.set("React", <SiReact className={`${iconSize} mb-3 hover:text-sky-700`} />);
+    frameworksMap.set("Next", <SiNextdotjs className={`${iconSize} mb-3`} />);
+    frameworksMap.set("Tailwind CSS", <SiTailwindcss className={`${iconSize} mb-3 hover:text-sky-700`} />);
+    frameworksMap.set("Strapi.io", <SiStrapi className={`${iconSize} mb-3 hover:text-sky-700`} />);
+    frameworksMap.set("Firebase", <SiFirebase className={`${iconSize} mb-3 hover:text-amber-600`} />);
+    frameworksMap.set("Flutter", <SiFlutter className={`${iconSize} mb-3 hover:text-sky-700`} />);
 
     // Map for Tools section
-    toolsMap.set("Git", <BsGit className={`${iconSize} hover:text-amber-600 `} />);
-    toolsMap.set("VSCode", <TbBrandVscode className={`${iconSize} hover:text-sky-700 `} />);
-    toolsMap.set("Figma", <SiFigma className={`${iconSize} hover:text-rose-600 `} />);
-    toolsMap.set("Linux", <SiLinux className={`${iconSize} `} />);
-    toolsMap.set("Postman", <SiPostman className={`${iconSize} hover:text-amber-600 `} />);
-    toolsMap.set("Jira", <SiJira className={`${iconSize} hover:text-sky-700 `} />);
+    toolsMap.set("Git", <BsGit className={`${iconSize} mb-3 hover:text-amber-600 `} />);
+    toolsMap.set("VSCode", <TbBrandVscode className={`${iconSize} mb-3 hover:text-sky-700 `} />);
+    toolsMap.set("Figma", <SiFigma className={`${iconSize} mb-3 hover:text-rose-600 `} />);
+    toolsMap.set("Linux", <SiLinux className={`${iconSize} mb-3 `} />);
+    toolsMap.set("Postman", <SiPostman className={`${iconSize} mb-3 hover:text-amber-600 `} />);
+    toolsMap.set("Jira", <SiJira className={`${iconSize} mb-3 hover:text-sky-700 `} />);
 
     return (
         <SectionLayout id="Technology" title="Technology">
@@ -99,9 +99,9 @@ const IconWithText: React.FC<IconWithTextProp> = ({ text, icon }) => {
     }
 
     return (
-        <div ref={cardRef} className="flex justify-center items-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div ref={cardRef} className="flex flex-col justify-center items-center" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {icon}
-            {isHovering && <p className="ml-1 transition delay-150 duration-300 ease-in-out">{text}</p>}
+            <p className="text-sm md:text-lg">{text}</p>
         </div>
     )
 }
@@ -118,8 +118,8 @@ const IconsSection: React.FC<IconsSection> = ({ map, title }) => {
             <div className='w-full flex justify-start'>
                 <h1 className="font-bold text-xl mb-4 lg:text-3xl">{title}</h1>
             </div>
-            <div className="flex flex-col w-full mb-10 lg:mb-16 justify-center items-center">
-                <div className="flex py-4 lg:py-12 w-full justify-between items-center">
+            <div className="flex flex-col w-full my-4 lg:mb-16 justify-center items-center">
+                <div className="grid gap-8 grid-cols-3 grid-rows-2 w-full md:flex md:py-4 lg:py-12 w-full md:justify-between md:items-center">
                     {Array.from(map.entries()).map(([icon, text]) => <IconWithText key={Math.random() * 1000} icon={text} text={icon} />)}
                 </div>
             </div>
