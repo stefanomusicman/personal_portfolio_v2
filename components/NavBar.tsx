@@ -65,7 +65,7 @@ const NavBar = () => {
             >
                 <Link href="https://www.linkedin.com/in/stefano-proietti-286497235/" target='_blank'><AiFillLinkedin className="w-8 h-8 hover:scale-125" /></Link>
                 <Link href="https://github.com/stefanomusicman" target='_blank'><AiFillGithub className="w-8 h-8 ml-5 hover:scale-125" /></Link>
-                <Link href="https://drive.google.com/file/d/1zO2854p5sFkV3u6V914UhjUypcPQjiDk/view?usp=sharing" target='_blank'><CgFileDocument className="w-8 h-8 ml-5 hover:scale-125" /></Link>
+                <Link href="https://drive.google.com/file/d/16ZV5wOafNsrYador8F9ap1koC3vcMlFf/view?usp=sharing" target='_blank'><CgFileDocument className="w-8 h-8 ml-5 hover:scale-125" /></Link>
             </div>
         </div>
     )

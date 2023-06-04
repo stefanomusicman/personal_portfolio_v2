@@ -224,7 +224,7 @@ const TextSection = () => {
                     lg:flex
                     lg:flex-col
                     lg:justify-center">
-                <Link href="https://drive.google.com/file/d/1zO2854p5sFkV3u6V914UhjUypcPQjiDk/view?usp=sharing" target='_blank'><button className="
+                <Link href="https://drive.google.com/file/d/16ZV5wOafNsrYador8F9ap1koC3vcMlFf/view?usp=sharing" target='_blank'><button className="
                     rounded-full
                     bg-gradient-to-r from-blue-500 to-green-500
                     px-4
