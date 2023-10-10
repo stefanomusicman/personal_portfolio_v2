@@ -124,7 +124,7 @@ const projectInfo: CardInfo[] = [
         title: 'BarBeat',
         img: '/barbeat.png',
         tech: 'Flutter, Firebase and Rive',
-        description: 'Mobile application allowing users to discover new cocktails. Built with a team, currently in closed testing. Private repository',
+        description: 'Mobile application allowing users to discover new cocktails. Built with a team, available on the App Store and Google Play Store. Private repository',
         showDemoLink: true,
         showCodeLink: false,
         demoLink: 'https://barbeat.net/',
