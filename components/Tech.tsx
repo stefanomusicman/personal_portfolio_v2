@@ -19,6 +19,11 @@ import { SiTailwindcss } from 'react-icons/si';
 import { SiStrapi } from 'react-icons/si';
 import { SiFlutter } from 'react-icons/si';
 import { SiFirebase } from 'react-icons/si';
+// ----------- Database Icons ---------------
+import { SiOracle } from "react-icons/si";
+import { SiMicrosoftsqlserver } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
 // ----------- Tools Icons ------------------
 import { BsGit } from 'react-icons/bs';
 import { TbBrandVscode } from 'react-icons/tb';
@@ -37,6 +42,7 @@ const Tech = () => {
 
     const languagesMap: Map<string, ReactNode> = new Map();
     const frameworksMap: Map<string, ReactNode> = new Map();
+    const databaseMap: Map<string, ReactNode> = new Map();
     const toolsMap: Map<string, ReactNode> = new Map();
 
     // Map for Languages section
@@ -55,6 +61,12 @@ const Tech = () => {
     frameworksMap.set("Firebase", <SiFirebase className={`${iconSize} mb-3 hover:text-amber-600`} />);
     frameworksMap.set("Flutter", <SiFlutter className={`${iconSize} mb-3 hover:text-sky-700`} />);
 
+    // Map for Databases section
+    databaseMap.set("Oracle", <SiOracle className={`${iconSize} mb-3 hover:text-rose-600`} />);
+    databaseMap.set("MS SQL Server", <SiMicrosoftsqlserver className={`${iconSize} mb-3`} />);
+    databaseMap.set("MongoDB", <SiMongodb className={`${iconSize} mb-3 hover:text-green-600`} />);
+    databaseMap.set("MySQL", <SiMysql className={`${iconSize} mb-3`} />);
+
     // Map for Tools section
     toolsMap.set("Git", <BsGit className={`${iconSize} mb-3 hover:text-amber-600 `} />);
     toolsMap.set("VSCode", <TbBrandVscode className={`${iconSize} mb-3 hover:text-sky-700 `} />);
@@ -67,6 +79,7 @@ const Tech = () => {
         <SectionLayout id="Technology" title="Technology">
             <IconsSection map={languagesMap} title="Languages/Other" />
             <IconsSection map={frameworksMap} title="Frameworks/Libraries" />
+            <IconsSection map={databaseMap} title="DBMS" />
             <IconsSection map={toolsMap} title="Tools" />
         </SectionLayout>
     )
