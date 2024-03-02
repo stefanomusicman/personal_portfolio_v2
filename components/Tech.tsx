@@ -4,13 +4,17 @@ import SectionLayout from "./SectionLayout";
 // --------- Languages Icons ---------------
 import { SiJavascript } from 'react-icons/si';
 import { SiTypescript } from 'react-icons/si';
+import { SiPython } from "react-icons/si";
 import { SiHtml5 } from 'react-icons/si';
+import { FaJava } from "react-icons/fa";
 import { SiCss3 } from 'react-icons/si';
 import { SiCsharp } from 'react-icons/si';
 import { TbSql } from 'react-icons/tb';
 // --------- Frameworks Icons ---------------
 import { SiReact } from 'react-icons/si';
 import { SiNextdotjs } from 'react-icons/si';
+import { SiFlask } from "react-icons/si";
+import { SiDotnet } from "react-icons/si";
 import { SiTailwindcss } from 'react-icons/si';
 import { SiStrapi } from 'react-icons/si';
 import { SiFlutter } from 'react-icons/si';
@@ -38,16 +42,16 @@ const Tech = () => {
     // Map for Languages section
     languagesMap.set("JavaScript", <SiJavascript className={`${iconSize} mb-3 hover:text-amber-400 hover:bg-white`} />);
     languagesMap.set("TypeScript", <SiTypescript className={`${iconSize} mb-3 hover:text-sky-700 hover:bg-white`} />);
-    languagesMap.set("HTML", <SiHtml5 className={`${iconSize} mb-3 hover:text-amber-600 `} />);
-    languagesMap.set("CSS", <SiCss3 className={`${iconSize} mb-3 hover:text-sky-700 `} />);
+    languagesMap.set("Python", <SiPython className={`${iconSize} mb-3 hover:text-amber-600 `} />);
+    languagesMap.set("Java", <FaJava className={`${iconSize} mb-3 hover:text-sky-700 `} />);
     languagesMap.set("C#", <SiCsharp className={`${iconSize} mb-3 hover:text-indigo-600 `} />);
     languagesMap.set("SQL PL/SQL", <TbSql className={`${iconSize} mb-3`} />);
 
     // Map for Frameworks section
     frameworksMap.set("React", <SiReact className={`${iconSize} mb-3 hover:text-sky-700`} />);
     frameworksMap.set("Next", <SiNextdotjs className={`${iconSize} mb-3`} />);
-    frameworksMap.set("Tailwind CSS", <SiTailwindcss className={`${iconSize} mb-3 hover:text-sky-700`} />);
-    frameworksMap.set("Strapi.io", <SiStrapi className={`${iconSize} mb-3 hover:text-sky-700`} />);
+    frameworksMap.set("Flask", <SiFlask className={`${iconSize} mb-3 hover:text-sky-700`} />);
+    frameworksMap.set(".NET", <SiDotnet className={`${iconSize} mb-3 hover:text-sky-700`} />);
     frameworksMap.set("Firebase", <SiFirebase className={`${iconSize} mb-3 hover:text-amber-600`} />);
     frameworksMap.set("Flutter", <SiFlutter className={`${iconSize} mb-3 hover:text-sky-700`} />);
 
