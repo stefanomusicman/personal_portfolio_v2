@@ -132,6 +132,17 @@ const projectInfo: CardInfo[] = [
     },
     {
         id: 2,
+        title: 'Guitar Directory',
+        img: '/guitar_directory.png',
+        tech: 'Next.js + TS, Flask, Firebase, MUI, MongoDB',
+        description: 'Application that interacts with a custom API as well as provides authentication to allow users to store favorites.',
+        showDemoLink: true,
+        showCodeLink: true,
+        demoLink: 'https://guitar-frontend.vercel.app',
+        codeLink: 'https://github.com/stefanomusicman/guitar_frontend',
+    },
+    {
+        id: 3,
         title: 'Half Caf Blog',
         img: '/half_caf_blog.png',
         tech: 'Next.js + Typescript, strapi.io and Firebase',
@@ -142,7 +153,7 @@ const projectInfo: CardInfo[] = [
         codeLink: 'https://github.com/stefanomusicman/half-caf-blog',
     },
     {
-        id: 3,
+        id: 4,
         title: 'Personal Portfolio',
         img: '/personal_portfolio_2.png',
         tech: 'Next.js + Typescript, Tailwind CSS and GSAP',
@@ -152,15 +163,4 @@ const projectInfo: CardInfo[] = [
         demoLink: '',
         codeLink: 'https://github.com/stefanomusicman/personal_portfolio_v2',
     },
-    {
-        id: 4,
-        title: 'Weather App',
-        img: '/weather_app.png',
-        tech: 'PWA built with Next.js + Typescript',
-        description: 'Application that interacts with a third party API to retrieve data.',
-        showDemoLink: true,
-        showCodeLink: true,
-        demoLink: 'https://weather-app-rose-two.vercel.app/',
-        codeLink: 'https://github.com/stefanomusicman/weather-app',
-    }
 ]
